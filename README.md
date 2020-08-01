@@ -12,8 +12,8 @@ curl -d "{ products: [ { Product : {id_product:200 , name= galletas, value15, di
 
 Como resultado simplemente regresa el json que le fue mandado si está bien formado, en caso contrario regresa 422.
 
-Además el repositorio incluye el comprimido en django_desarrollo.zip que son los archivos necesarios para crear e implementar la aplicación en la plataforma aws elastic beanstalk, en un ambiente de aplicación web. 
+Además el repositorio incluye el comprimido django_desarrollo.zip en la carpeta ebdjango que son los archivos necesarios para crear e implementar la aplicación en la plataforma aws elastic beanstalk, en un ambiente de aplicación web. 
 
-También se encuentra otro comprimido que es una aplicación simple de django. Se agrega el ambiente virtual de python para verificar la configuración inicial. 
+También se encuentra otro comprimido que es una aplicación simple de django. Se agrega el ambiente virtual de python para verificar la configuración inicial en el directorio eb-virt. El archivo gitignore esta en blanco para mostrar el contido completo de la aplicacion
 
 En el entorno usado de aws elastic beanstalk, se encuentra dentro de la capa gratuita que brinda la plataforma.
