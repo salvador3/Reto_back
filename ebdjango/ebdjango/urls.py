@@ -1,21 +1,18 @@
-"""ebdjango URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
+from ebdjango.views import ProductApi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/products/bulk_insert/', ProductApi.as_view(), name='api_create_product'),
 ]
+
+
+
+
+#curl -d "{ products: [ { Product : {id_product:200 , name= galletas, value15, discount_value=1, stock=10}  }, { Product : {id_product:201 , name= tamales, value=10, discount_value=4, stock=100}  }, { Product : {id_product:202 , name= tacos, value=5, discount_value=2, stock=10}}, { Product : {id_product:203 , name= refresco, value15, discount_value100, stock=0} } ] }"  http://127.0.0.1:8000/api/products/bulk_insert/
+
+#curl -d "{ products: [ { Product : {id_product:200 , name= galletas, value15, discount_value=1, stock=10}  }, { Product : {id_product:201 , name= tamales, value=10, discount_value=4, stock=100}  }, { Product : {id_product:202 , name= tacos, value=5, discount_value=2, stock=10}}, { Product : {id_product:203 , name= refresco, value15, discount_value100, stock=0} } ] }"  http://django-env.eba-s9tpphsy.us-west-2.elasticbeanstalk.com/api/products/bulk_insert/
+
+#curl -d "{ products: [ { Product : {id_product:200 , name= galletas, value15, discount_value=1, stock=10}  }, { Product : {id_product:201 , name= tamales, value=10, discount_value=4, stock=100}  }, { Product : {id_product:202 , name= tacos, value=5, discount_value=2, stock=10}}, { Product : {id_product:203 , name= refresco, value15, discount_value100, stock=0} } ] }"  http://django-env.eba-8a3we8cm.us-east-2.elasticbeanstalk.com/api/products/bulk_insert/
